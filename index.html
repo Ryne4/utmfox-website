@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CB16V89D32"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CB16V89D32');
+</script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>UTM Fox — Coming Soon</title>
@@ -98,6 +107,9 @@ form.contact-form input:focus, form.contact-form textarea:focus { outline: 2px s
 
 footer { text-align: center; padding: 32px; font-size: 12px; color: var(--text-muted); }
 footer img.footer-logo { height: 18px; opacity: 0.6; margin-bottom: 10px; display: block; margin-left: auto; margin-right: auto; }
+footer .footer-links { margin-bottom: 10px; }
+footer .footer-links a { color: var(--text-muted); text-decoration: none; margin: 0 10px; }
+footer .footer-links a:hover { color: var(--copper-hover); text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -209,6 +221,7 @@ footer img.footer-logo { height: 18px; opacity: 0.6; margin-bottom: 10px; displa
 
 <footer>
   <img class="footer-logo" src="assets/logo.svg" alt="UTM Fox" />
+  <div class="footer-links"><a href="/terms-and-conditions/">Terms &amp; Conditions</a> · <a href="/privacy-policy/">Privacy Policy</a></div>
   &copy; 2026 UTM Fox. All rights reserved.
 </footer>
 
