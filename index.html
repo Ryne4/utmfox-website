@@ -51,12 +51,70 @@ h1.headline { font-size: 46px; font-weight: 800; line-height: 1.12; margin: 0 0 
 p.subheadline { font-size: 18px; color: var(--text-muted); max-width: 620px; margin: 0 auto 32px; line-height: 1.5; }
 .hero-badge-row { display: flex; justify-content: center; margin-bottom: 56px; }
 
-/* Hero visual mock */
-.hero-visual { background: var(--surface-muted); border: 1px solid var(--border); border-radius: 14px; max-width: 760px; margin: 0 auto; padding: 22px 26px; text-align: left; }
-.hero-visual-row { display: flex; align-items: center; justify-content: space-between; background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
-.mono-url { font-family: var(--font-mono); font-size: 13px; color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.badge-healthy { display: inline-flex; align-items: center; gap: 6px; background: var(--healthy-bg); color: var(--healthy); font-weight: 700; font-size: 13px; padding: 5px 12px; border-radius: 20px; flex-shrink: 0; margin-left: 14px; }
-.dot-healthy { width: 7px; height: 7px; border-radius: 50%; background: var(--healthy); display: inline-block; }
+/* Free UTM builder (hero widget) */
+.hero-visual { background: var(--surface-muted); border: 1px solid var(--border); border-radius: 14px; max-width: 560px; margin: 0 auto; padding: 26px 28px; text-align: left; }
+.builder-head { margin-bottom: 18px; }
+.builder-eyebrow { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--copper); margin-bottom: 5px; }
+.builder-sub { display: block; font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+.builder-label { display: block; font-size: 12.5px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+.builder-input {
+  width: 100%; padding: 11px 13px; border: 1px solid var(--border); border-radius: 8px;
+  font-size: 14px; font-family: inherit; background: #fff; color: var(--ink); margin-bottom: 14px;
+  -webkit-appearance: none; appearance: none;
+}
+select.builder-input {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat; background-position: right 11px center; background-size: 15px;
+  padding-right: 34px; cursor: pointer;
+}
+.builder-input:focus { outline: 2px solid var(--copper); outline-offset: 1px; border-color: var(--copper); }
+.builder-input.is-invalid { border-color: #dc2626; }
+.builder-custom { margin-top: -6px; }
+
+.builder-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.builder-field { min-width: 0; }
+
+.builder-error { font-size: 12.5px; color: #dc2626; margin: -8px 0 12px; min-height: 0; }
+.builder-error:empty { display: none; }
+.builder-hint { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); margin: -8px 0 14px; line-height: 1.5; }
+.builder-hint:empty { display: none; }
+.builder-hint b { color: var(--ink); font-weight: 500; }
+
+.builder-submit {
+  width: 100%; background: var(--copper); color: #fff; border: 1px solid var(--copper);
+  border-radius: 8px; padding: 12px 20px; font-weight: 600; font-size: 14.5px;
+  font-family: inherit; cursor: pointer; margin-top: 2px;
+}
+.builder-submit:hover { background: var(--copper-hover); border-color: var(--copper-hover); }
+.builder-submit:disabled { opacity: 0.6; cursor: default; }
+
+.builder-result { margin-top: 18px; border-top: 1px solid var(--border); padding-top: 18px; }
+.builder-result-label { font-size: 11.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
+.builder-result-row { display: flex; align-items: stretch; gap: 10px; }
+.builder-url {
+  flex: 1; min-width: 0; background: #fff; border: 1px solid var(--border); border-radius: 8px;
+  padding: 12px 14px; font-family: var(--font-mono); font-size: 12.5px; color: var(--ink);
+  line-height: 1.5; word-break: break-all;
+}
+.builder-copy {
+  flex-shrink: 0; align-self: flex-start; background: #fff; border: 1px solid var(--border);
+  color: var(--ink); border-radius: 8px; padding: 12px 16px; font-weight: 600; font-size: 13px;
+  font-family: inherit; cursor: pointer;
+}
+.builder-copy:hover { border-color: var(--copper); color: var(--copper-hover); }
+.builder-copy.copied { border-color: var(--healthy); color: var(--healthy); }
+.builder-result-foot { font-size: 13px; color: var(--text-muted); margin-top: 12px; line-height: 1.5; }
+.builder-result-foot a { color: var(--copper-hover); font-weight: 600; }
+
+.builder-privacy { font-size: 11.5px; color: var(--text-muted); line-height: 1.55; margin: 16px 0 0; }
+.builder-privacy a { color: var(--text-muted); text-decoration: underline; }
+
+@media (max-width: 640px) {
+  .builder-row { grid-template-columns: 1fr; gap: 0; }
+  .builder-result-row { flex-direction: column; }
+  .builder-copy { align-self: stretch; }
+}
 
 /* Section 2: Problem -> Workflow */
 .section-head { text-align: center; max-width: 640px; margin: 0 auto 48px; }
@@ -162,10 +220,85 @@ footer .footer-links a:hover { color: var(--copper-hover); text-decoration: unde
       <a class="btn-outline btn-lg" href="/product/">See how it works</a>
     </div>
     <div class="hero-visual">
-      <div class="hero-visual-row">
-        <span class="mono-url">example.com/fall?utm_source=google&amp;utm_medium=paid_social&amp;utm_campaign=2026_q3_fall</span>
-        <span class="badge-healthy"><span class="dot-healthy"></span>94/100</span>
+      <div class="builder-head">
+        <span class="builder-eyebrow">Free UTM builder</span>
+        <span class="builder-sub">No account needed. Built to the same rules UTM Fox enforces.</span>
       </div>
+
+      <form id="utm-builder" novalidate>
+        <label class="builder-label" for="ub-url">Your website address</label>
+        <input class="builder-input" id="ub-url" name="url" type="text" inputmode="url"
+               placeholder="example.com/fall-sale" autocomplete="off" spellcheck="false" />
+        <div class="builder-error" id="ub-url-error"></div>
+
+        <div class="builder-row">
+          <div class="builder-field">
+            <label class="builder-label" for="ub-source">Source</label>
+            <select class="builder-input" id="ub-source" name="source">
+              <option value="">Choose…</option>
+              <option value="google">google</option>
+              <option value="facebook">facebook</option>
+              <option value="instagram">instagram</option>
+              <option value="linkedin">linkedin</option>
+              <option value="youtube">youtube</option>
+              <option value="tiktok">tiktok</option>
+              <option value="bing">bing</option>
+              <option value="email">email</option>
+              <option value="newsletter">newsletter</option>
+              <option value="radio">radio</option>
+              <option value="podcast">podcast</option>
+              <option value="print">print</option>
+              <option value="qr">qr</option>
+              <option value="__custom">Other…</option>
+            </select>
+            <input class="builder-input builder-custom" id="ub-source-custom" type="text"
+                   placeholder="your source" autocomplete="off" spellcheck="false" hidden />
+          </div>
+
+          <div class="builder-field">
+            <label class="builder-label" for="ub-medium">Medium</label>
+            <select class="builder-input" id="ub-medium" name="medium">
+              <option value="">Choose…</option>
+              <option value="paid_search">paid_search</option>
+              <option value="paid_social">paid_social</option>
+              <option value="organic_social">organic_social</option>
+              <option value="email">email</option>
+              <option value="sms">sms</option>
+              <option value="display">display</option>
+              <option value="affiliate">affiliate</option>
+              <option value="referral">referral</option>
+              <option value="offline">offline</option>
+              <option value="__custom">Other…</option>
+            </select>
+            <input class="builder-input builder-custom" id="ub-medium-custom" type="text"
+                   placeholder="your medium" autocomplete="off" spellcheck="false" hidden />
+          </div>
+        </div>
+
+        <label class="builder-label" for="ub-campaign">Campaign name</label>
+        <input class="builder-input" id="ub-campaign" name="campaign" type="text"
+               placeholder="Fall Sale 2026" autocomplete="off" spellcheck="false" />
+        <div class="builder-hint" id="ub-campaign-hint"></div>
+
+        <button class="builder-submit" type="submit" id="ub-submit">Generate my UTM link</button>
+      </form>
+
+      <div class="builder-result" id="ub-result" hidden>
+        <div class="builder-result-label">Your tracking URL</div>
+        <div class="builder-result-row">
+          <code class="builder-url" id="ub-output"></code>
+          <button class="builder-copy" type="button" id="ub-copy">Copy</button>
+        </div>
+        <div class="builder-result-foot">
+          Want this governed, scored and monitored for your whole team?
+          <a href="https://app.utmfox.com/signup">Start free</a>
+        </div>
+      </div>
+
+      <p class="builder-privacy">
+        We record the website address entered here so we know which companies find UTM Fox useful.
+        No account or email required. See our <a href="/privacy-policy/">Privacy Policy</a>.
+      </p>
     </div>
   </section>
 
@@ -294,6 +427,186 @@ footer .footer-links a:hover { color: var(--copper-hover); text-decoration: unde
       submitBtn.disabled = false;
     });
   });
+</script>
+
+<script>
+/* Free UTM builder.
+   The link is built entirely in the browser so it appears instantly and still works if
+   our API is unreachable. The POST is fire-and-forget lead capture, never a dependency.
+   Sanitizing rules mirror app/src/lib/utm-sanitize.ts, which is the source of truth and
+   re-applies all of this server-side. */
+(function () {
+  var form = document.getElementById('utm-builder');
+  if (!form) return;
+
+  var CAPTURE_ENDPOINT = 'https://app.utmfox.com/api/v1/public/utm-builder';
+  var MAX_VALUE_LENGTH = 100;
+
+  var urlEl = document.getElementById('ub-url');
+  var urlErrEl = document.getElementById('ub-url-error');
+  var sourceEl = document.getElementById('ub-source');
+  var sourceCustomEl = document.getElementById('ub-source-custom');
+  var mediumEl = document.getElementById('ub-medium');
+  var mediumCustomEl = document.getElementById('ub-medium-custom');
+  var campaignEl = document.getElementById('ub-campaign');
+  var campaignHintEl = document.getElementById('ub-campaign-hint');
+  var submitEl = document.getElementById('ub-submit');
+  var resultEl = document.getElementById('ub-result');
+  var outputEl = document.getElementById('ub-output');
+  var copyEl = document.getElementById('ub-copy');
+
+  function sanitizeUtmValue(raw) {
+    return String(raw)
+      .normalize('NFKD')
+      .replace(/[̀-ͯ]/g, '')
+      .toLowerCase()
+      .trim()
+      .replace(/\s+/g, '_')
+      .replace(/[^a-z0-9_-]/g, '')
+      .replace(/_{2,}/g, '_')
+      .replace(/-{2,}/g, '-')
+      .replace(/^[_-]+|[_-]+$/g, '')
+      .slice(0, MAX_VALUE_LENGTH)
+      .replace(/[_-]+$/g, '');
+  }
+
+  function normalizeDestinationUrl(raw) {
+    var trimmed = String(raw).trim();
+    if (!trimmed) return { ok: false, error: 'Enter your website address.' };
+    var withProtocol = /^https?:\/\//i.test(trimmed) ? trimmed : 'https://' + trimmed;
+    var url;
+    try { url = new URL(withProtocol); } catch (e) {
+      return { ok: false, error: "That doesn't look like a valid web address." };
+    }
+    if (url.protocol !== 'http:' && url.protocol !== 'https:') {
+      return { ok: false, error: 'Only http and https addresses are supported.' };
+    }
+    if (url.hostname.indexOf('.') === -1 || /\.$/.test(url.hostname)) {
+      return { ok: false, error: "That doesn't look like a valid web address." };
+    }
+    // Strip any utm_* already present — pasting an already-tagged link is common, and
+    // duplicate parameters resolve unpredictably across platforms.
+    var keys = [];
+    url.searchParams.forEach(function (_v, k) { keys.push(k); });
+    keys.forEach(function (k) {
+      if (k.toLowerCase().indexOf('utm_') === 0) url.searchParams.delete(k);
+    });
+    return { ok: true, url: url };
+  }
+
+  // "Other…" reveals a free-text box for the two dropdowns.
+  function wireCustom(selectEl, customEl) {
+    selectEl.addEventListener('change', function () {
+      var isCustom = selectEl.value === '__custom';
+      customEl.hidden = !isCustom;
+      if (isCustom) customEl.focus();
+    });
+  }
+  wireCustom(sourceEl, sourceCustomEl);
+  wireCustom(mediumEl, mediumCustomEl);
+
+  function readChoice(selectEl, customEl) {
+    return selectEl.value === '__custom' ? sanitizeUtmValue(customEl.value) : selectEl.value;
+  }
+
+  // Show what the campaign name becomes, so the correction never arrives as a surprise
+  // in the final URL.
+  campaignEl.addEventListener('input', function () {
+    var typed = campaignEl.value;
+    var clean = sanitizeUtmValue(typed);
+    if (!typed.trim() || clean === typed) { campaignHintEl.textContent = ''; return; }
+    campaignHintEl.innerHTML = clean
+      ? 'Will be used as <b>' + clean.replace(/[&<>]/g, '') + '</b>'
+      : 'That name has no characters a UTM can use — try letters or numbers.';
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    urlErrEl.textContent = '';
+    urlEl.classList.remove('is-invalid');
+
+    var normalized = normalizeDestinationUrl(urlEl.value);
+    if (!normalized.ok) {
+      urlErrEl.textContent = normalized.error;
+      urlEl.classList.add('is-invalid');
+      urlEl.focus();
+      return;
+    }
+
+    var source = readChoice(sourceEl, sourceCustomEl);
+    var medium = readChoice(mediumEl, mediumCustomEl);
+    var campaign = sanitizeUtmValue(campaignEl.value);
+
+    if (!source) { urlErrEl.textContent = 'Choose a source.'; sourceEl.focus(); return; }
+    if (!medium) { urlErrEl.textContent = 'Choose a medium.'; mediumEl.focus(); return; }
+    if (!campaign) {
+      urlErrEl.textContent = 'Enter a campaign name using letters or numbers.';
+      campaignEl.classList.add('is-invalid');
+      campaignEl.focus();
+      return;
+    }
+    campaignEl.classList.remove('is-invalid');
+
+    var url = normalized.url;
+    url.searchParams.set('utm_source', source);
+    url.searchParams.set('utm_medium', medium);
+    url.searchParams.set('utm_campaign', campaign);
+    var generated = url.toString();
+
+    outputEl.textContent = generated;
+    resultEl.hidden = false;
+    copyEl.classList.remove('copied');
+    copyEl.textContent = 'Copy';
+
+    if (window.gtag) {
+      gtag('event', 'utm_builder_generate', { utm_source_value: source, utm_medium_value: medium });
+    }
+
+    // Fire-and-forget. A failure here must never cost the visitor their link.
+    try {
+      fetch(CAPTURE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          url: url.origin + url.pathname,
+          source: source,
+          medium: medium,
+          campaign: campaign
+        }),
+        keepalive: true
+      }).catch(function () {});
+    } catch (err) { /* ignore */ }
+
+    resultEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+
+  copyEl.addEventListener('click', function () {
+    var text = outputEl.textContent;
+    function done() {
+      copyEl.textContent = 'Copied';
+      copyEl.classList.add('copied');
+      setTimeout(function () {
+        copyEl.textContent = 'Copy';
+        copyEl.classList.remove('copied');
+      }, 2000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else {
+      fallback();
+    }
+    function fallback() {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); done(); } catch (err) { /* ignore */ }
+      document.body.removeChild(ta);
+    }
+  });
+})();
 </script>
 
 </body>
