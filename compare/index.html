@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CB16V89D32"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CB16V89D32');
+</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>UTM Fox vs. Terminus, UTM.io, CampaignTrackly & Bitly — Compare</title>
+<meta name="description" content="See how UTM Fox compares to Terminus, UTM.io, CampaignTrackly and Bitly. Campaign governance, health scoring and destination monitoring — deployed to your own Cloudflare, not ours." />
+<link rel="canonical" href="https://utmfox.com/compare/" />
+<meta property="og:title" content="UTM Fox vs. Terminus, UTM.io, CampaignTrackly & Bitly — Compare" />
+<meta property="og:description" content="See how UTM Fox compares to Terminus, UTM.io, CampaignTrackly and Bitly. Campaign governance, health scoring and destination monitoring — deployed to your own Cloudflare, not ours." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://utmfox.com/compare/" />
+<link rel="icon" type="image/png" href="/assets/favicon.png" />
+<link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/"><img class="logo" src="/assets/logo.svg" alt="UTM Fox" /></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="/product/">Product</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/compare/" class="current">Compare</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="signin" href="https://app.utmfox.com/login">Sign in</a>
+      <a class="btn-primary" href="https://app.utmfox.com/signup">Start free</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="hero">
+    <div class="eyebrow">Compare</div>
+    <h1 class="headline">UTM Fox vs. the alternatives</h1>
+    <p class="subheadline">Most campaign tracking tools make you route your traffic through their infrastructure. UTM Fox connects to the Cloudflare account you already own — so your domain stays yours.</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="https://app.utmfox.com/signup">Start free</a>
+      <a class="btn-secondary" href="/product/">See the full feature list</a>
+    </div>
+  </section>
+  <section>
+
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-tab="terminus" role="tab">vs. Terminus</button>
+      <button class="tab" data-tab="utmio" role="tab">vs. UTM.io</button>
+      <button class="tab" data-tab="tracklly" role="tab">vs. CampaignTrackly</button>
+      <button class="tab" data-tab="bitly" role="tab">vs. Bitly</button>
+    </div>
+    <div class="tabpanel active" id="panel-terminus">
+      <div class="verdict">
+        <div class="verdict-main">
+          <div class="eyebrow" style="margin-bottom:8px;">The short version</div>
+          <h2>Terminus is the closest thing to UTM Fox — until you look at where the redirect lives.</h2>
+          <p>Terminus is the only competitor that already pairs a governance rules engine with destination monitoring. It's a genuinely good product. But every link you publish through it resolves on Terminus's infrastructure, on Terminus's domain, under Terminus's uptime. UTM Fox writes the same redirect into <em>your</em> Cloudflare account and then gets out of the traffic path.</p>
+        </div>
+        <div class="verdict-side">
+          <div class="verdict-stat"><span class="stat-label">Their entry price</span><span class="stat-value">$66<span class="stat-unit">/mo annual</span></span><span class="stat-sub">3 users · 5 projects</span></div>
+          <div class="verdict-stat"><span class="stat-label">Our entry price</span><span class="stat-value copper">$0<span class="stat-unit">free tier</span></span><span class="stat-sub">paid from $29/mo · 3 seats</span></div>
+        </div>
+      </div>
+
+      <div class="three-col">
+        <div class="col-card">
+          <h3 class="good">Where Terminus is strong</h3>
+          <ul>
+            <li>Mature UTM rules engine — forced lowercase, character limits, prohibited characters, required fields</li>
+            <li>Naming "Conventions" module across projects and clients</li>
+            <li>URL monitoring that checks destinations stay reachable</li>
+            <li>Grid Mode spreadsheet-style bulk builder and bulk cloning</li>
+            <li>Chrome extension, API access, fine-grained permissions</li>
+          </ul>
+        </div>
+        <div class="col-card">
+          <h3 class="gap">Where it leaves you exposed</h3>
+          <ul>
+            <li>Vendor-hosted redirect — your campaign links depend on their uptime, not yours</li>
+            <li>No single readable health score; you read a rules list instead</li>
+            <li>No free tier — a 21-day trial is the only way to evaluate</li>
+            <li>No offline/vanity redirect workflow tied to a governed taxonomy</li>
+            <li>Priced per user and per project — costs climb as the team grows</li>
+          </ul>
+        </div>
+        <div class="col-card">
+          <h3 class="win">Why teams pick UTM Fox</h3>
+          <ul>
+            <li>Redirects deploy into your own Cloudflare account via OAuth</li>
+            <li>Every campaign carries a 0–100 Campaign Health Score anyone can act on</li>
+            <li>Unlimited campaigns on paid plans; seats capped, not metered per project</li>
+            <li>GA4 attribution monitoring surfaces campaigns that stopped reporting traffic</li>
+            <li>Free tier to prove it works before anyone signs a contract</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="matrix-wrap">
+        <div class="table-scroll"><table class="matrix">
+          <thead><tr><th>Capability</th><th class="us">UTM Fox</th><th>Terminus</th></tr></thead>
+          <tbody>
+            <tr><td class="feat">Redirect model</td><td class="us"><span class="yes">Your own Cloudflare</span><span class="cell-note">Connected by OAuth; traffic never touches us</span></td><td><span class="no">Vendor-hosted</span><span class="cell-note">Their domain or a domain you point at them</span></td></tr>
+            <tr><td class="feat">Enforced naming conventions</td><td class="us"><span class="yes">Yes</span><span class="cell-note">Approved sources/mediums, required params, name patterns</span></td><td><span class="yes">Yes</span><span class="cell-note">UTM rules engine</span></td></tr>
+            <tr><td class="feat">Campaign Health Score (0–100)</td><td class="us"><span class="yes">Yes</span><span class="cell-note">7 weighted factors incl. a live destination probe</span></td><td><span class="no">No</span><span class="cell-note">Monitoring only, no composite score</span></td></tr>
+            <tr><td class="feat">Post-launch destination monitoring</td><td class="us"><span class="partial">Event-driven</span><span class="cell-note">Re-checked on every campaign edit and redirect change; scheduled sweeps not yet live</span></td><td><span class="yes">Continuous</span></td></tr>
+            <tr><td class="feat">Duplicate campaign detection</td><td class="us"><span class="yes">Yes</span><span class="cell-note">Blocks a second campaign on the same source/medium/name</span></td><td><span class="no">Not documented</span></td></tr>
+            <tr><td class="feat">Approval workflow before publish</td><td class="us"><span class="no">Not yet</span><span class="cell-note">Blocking validation instead — bad links can't be saved</span></td><td><span class="no">No</span></td></tr>
+            <tr><td class="feat">GA4 attribution monitoring</td><td class="us"><span class="yes">Yes</span><span class="cell-note">Flags issued campaigns with zero sessions, and traffic with no campaign</span></td><td><span class="no">No</span></td></tr>
+            <tr><td class="feat">Conversion ledger / revenue mapping</td><td class="us"><span class="yes">Yes</span><span class="cell-note">Deduped claims ranked by source authority</span></td><td><span class="no">No</span></td></tr>
+            <tr><td class="feat">Instant short links, day one</td><td class="us"><span class="yes">Yes</span><span class="cell-note">utm.wiki fallback before your domain is connected</span></td><td><span class="yes">Yes</span></td></tr>
+            <tr><td class="feat">Free tier</td><td class="us"><span class="yes">Yes</span></td><td><span class="no">21-day trial only</span></td></tr>
+            <tr><td class="feat">Entry price</td><td class="us"><strong>Free → $29/mo</strong></td><td><strong>$66/mo annual</strong><span class="cell-note">$79/mo month-to-month</span></td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="watchout">
+        <strong>Worth knowing:</strong> Terminus has announced "Terminus Hub," billed as the next generation of campaign governance. It hasn't shipped as of August 2026. If it lands, expect their positioning to move toward ours — the architectural difference is the part they can't easily copy.
+      </div>
+    </div>
+    <div class="tabpanel" id="panel-utmio">
+      <div class="verdict">
+        <div class="verdict-main">
+          <div class="eyebrow" style="margin-bottom:8px;">The short version</div>
+          <h2>UTM.io stops bad links with a manager's approval. UTM Fox stops them with rules that never sleep.</h2>
+          <p>UTM.io's headline feature is an approval workflow — a person reviews every link before it goes live. That works until the reviewer is on vacation, or the campaign ships at 4:55pm on a Friday. UTM Fox enforces the same standards automatically at the moment of creation, so nothing queues behind a human.</p>
+        </div>
+        <div class="verdict-side">
+          <div class="verdict-stat"><span class="stat-label">Their entry price</span><span class="stat-value">$25–69<span class="stat-unit">/mo</span></span><span class="stat-sub">sources disagree — verify</span></div>
+          <div class="verdict-stat"><span class="stat-label">Our entry price</span><span class="stat-value copper">$0<span class="stat-unit">free tier</span></span><span class="stat-sub">paid from $29/mo</span></div>
+        </div>
+      </div>
+
+      <div class="three-col">
+        <div class="col-card">
+          <h3 class="good">Where UTM.io is strong</h3>
+          <ul>
+            <li>Naming convention templates enforced organization-wide</li>
+            <li>Approval workflow — a manager signs off before links go live</li>
+            <li>Team workspaces controlling who can create links</li>
+            <li>Branded domains and click tracking</li>
+            <li>One of the few competitors with a real free tier</li>
+          </ul>
+        </div>
+        <div class="col-card">
+          <h3 class="gap">Where it leaves you exposed</h3>
+          <ul>
+            <li>No post-launch destination monitoring — a link that breaks next month goes unnoticed</li>
+            <li>No health scoring; approval is binary and human-judged</li>
+            <li>Vendor-hosted redirects, same gatekeeper problem</li>
+            <li>No attribution monitoring or GA4 reconciliation</li>
+            <li>Approval queues become the bottleneck they were meant to prevent</li>
+          </ul>
+        </div>
+        <div class="col-card">
+          <h3 class="win">Why teams pick UTM Fox</h3>
+          <ul>
+            <li>Governance runs at creation time — no queue, no gatekeeper, no waiting</li>
+            <li>Destination re-checked on every edit, so a stale link surfaces without a reviewer</li>
+            <li>A 0–100 score gives the same confidence an approval was meant to give</li>
+            <li>Redirects live in your Cloudflare, not theirs</li>
+            <li>GA4 attribution monitoring catches campaigns that quietly stopped reporting</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="matrix-wrap">
+        <div class="table-scroll"><table class="matrix">
+          <thead><tr><th>Capability</th><th class="us">UTM Fox</th><th>UTM.io</th></tr></thead>
+          <tbody>
+            <tr><td class="feat">Redirect model</td><td class="us"><span class="yes">Your own Cloudflare</span></td><td><span class="no">Vendor-hosted</span></td></tr>
+            <tr><td class="feat">Enforced naming conventions</td><td class="us"><span class="yes">Yes</span><span class="cell-note">Token patterns, approved values, required params</span></td><td><span class="yes">Yes</span><span class="cell-note">Templates</span></td></tr>
+            <tr><td class="feat">Approval workflow</td><td class="us"><span class="partial">Automated instead</span><span class="cell-note">Blocking validation replaces human review</span></td><td><span class="yes">Yes</span><span class="cell-note">Their headline feature</span></td></tr>
+            <tr><td class="feat">Campaign Health Score (0–100)</td><td class="us"><span class="yes">Yes</span></td><td><span class="no">No</span></td></tr>
+            <tr><td class="feat">Post-launch destination monitoring</td><td class="us"><span class="partial">Event-driven</span><span class="cell-note">Re-checked on every edit and redirect change</span></td><td><span class="no">Not documented</span></td></tr>
+            <tr><td class="feat">GA4 attribution monitoring</td><td class="us"><span class="yes">Yes</span></td><td><span class="no">No</span></td></tr>
+            <tr><td class="feat">Conversion ledger</td><td class="us"><span class="yes">Yes</span></td><td><span class="no">No</span></td></tr>
+            <tr><td class="feat">Free tier</td><td class="us"><span class="yes">Yes</span></td><td><span class="yes">Yes</span></td></tr>
+            <tr><td class="feat">Entry price</td><td class="us"><strong>Free → $29/mo</strong></td><td><strong>$25–$69/mo</strong><span class="cell-note">Public sources conflict</span></td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="watchout">
+        <strong>Honest note:</strong> if a formal sign-off step is a hard compliance requirement for your organization, UTM.io has it today and UTM Fox does not. Our blocking validation prevents non-compliant links from ever being saved, which covers most of the same ground — but it isn't a named reviewer approving a queue.
+      </div>
+    </div>
+    <div class="tabpanel" id="panel-tracklly">
+      <div class="verdict">
+        <div class="verdict-main">
+          <div class="eyebrow" style="margin-bottom:8px;">The short version</div>
+          <h2>CampaignTrackly cleans up your data for reporting. UTM Fox stops it from breaking in the first place.</h2>
+          <p>CampaignTrackly is the cheapest governance-positioned tool in the category, and it's good at what it targets: reporting-ready UTM data flowing into GA4 or Adobe. Its checks are aimed at catching mislabeled traffic after the fact. UTM Fox validates the destination before launch — including a live request to the URL — so the campaign never goes out broken.</p>
+        </div>
+        <div class="verdict-side">
+          <div class="verdict-stat"><span class="stat-label">Their entry price</span><span class="stat-value">$15<span class="stat-unit">/mo</span></span><span class="stat-sub">500 links · 15,000 clicks</span></div>
+          <div class="verdict-stat"><span class="stat-label">Our entry price</span><span class="stat-value copper">$0<span class="stat-unit">free tier</span></span><span class="stat-sub">paid from $29/mo</span></div>
+        </div>
+      </div>
+
+      <div class="three-col">
+        <div class="col-card">
+          <h3 class="good">Where CampaignTrackly is strong</h3>
+          <ul>
+            <li>Lowest entry price in the governance category</li>
+            <li>Click &amp; Add and drag-and-drop UTM builders</li>
+            <li>Excel and Chrome extensions marketers already live in</li>
+            <li>QR code automation and 100+ integrations</li>
+            <li>21-day trial, no credit card</li>
+          </ul>
+        </div>
+        <div class="col-card">
+          <h3 class="gap">Where it leaves you exposed</h3>
+          <ul>
+            <li>Hard caps on links and clicks — you get billed for growth, not value</li>
+            <li>No destination health monitoring after launch</li>
+            <li>No composite health score to act on</li>
+            <li>Vendor-hosted short links; your domain isn't the source of truth</li>
+            <li>Positioned as reporting cleanup, not pre-launch prevention</li>
+          </ul>
+        </div>
+        <div class="col-card">
+          <h3 class="win">Why teams pick UTM Fox</h3>
+          <ul>
+            <li>A live HEAD request against every destination before the campaign is saved</li>
+            <li>Unlimited campaigns on paid plans — no per-link meter</li>
+            <li>Health checks recorded on every change, surfaced as an at-risk list on the dashboard</li>
+            <li>Redirects written into your own Cloudflare account</li>
+            <li>Free tier costs less than $15/mo to find out if it fits</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="matrix-wrap">
+        <div class="table-scroll"><table class="matrix">
+          <thead><tr><th>Capability</th><th class="us">UTM Fox</th><th>CampaignTrackly</th></tr></thead>
+          <tbody>
+            <tr><td class="feat">Redirect model</td><td class="us"><span class="yes">Your own Cloudflare</span></td><td><span class="no">Vendor-hosted</span></td></tr>
+            <tr><td class="feat">Pre-launch destination check</td><td class="us"><span class="yes">Live HTTP probe</span><span class="cell-note">Reachability, HTTPS, response time</span></td><td><span class="no">No</span><span class="cell-note">"AI integrity checks" target labeling, not liveness</span></td></tr>
+            <tr><td class="feat">Post-launch monitoring</td><td class="us"><span class="partial">Event-driven</span><span class="cell-note">Health checks on every campaign or redirect change</span></td><td><span class="no">Not documented</span></td></tr>
+            <tr><td class="feat">Campaign Health Score (0–100)</td><td class="us"><span class="yes">Yes</span></td><td><span class="no">No</span></td></tr>
+            <tr><td class="feat">Link volume caps</td><td class="us"><span class="yes">Unlimited campaigns on paid plans</span><span class="cell-note">Seats and redirects are what scale</span></td><td><span class="no">500 links at entry tier</span></td></tr>
+            <tr><td class="feat">Click volume caps</td><td class="us"><span class="partial">Session caps by plan</span><span class="cell-note">25k → 500k → unlimited</span></td><td><span class="no">15,000 clicks at entry tier</span></td></tr>
+            <tr><td class="feat">GA4 attribution monitoring</td><td class="us"><span class="yes">Yes</span></td><td><span class="partial">GA4 export, not reconciliation</span></td></tr>
+            <tr><td class="feat">QR codes</td><td class="us"><span class="partial">Via redirects</span><span class="cell-note">Vanity URLs point anywhere you generate a code</span></td><td><span class="yes">Built-in generator</span></td></tr>
+            <tr><td class="feat">Entry price</td><td class="us"><strong>Free → $29/mo</strong></td><td><strong>$15/mo</strong></td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="watchout">
+        <strong>Straight answer on price:</strong> CampaignTrackly is cheaper, and if all you need is a bulk UTM builder with a spreadsheet extension, it may be the right call today. The gap shows up when you want a campaign's destination actually verified rather than its label checked.
+      </div>
+    </div>
+    <div class="tabpanel" id="panel-bitly">
+      <div class="verdict">
+        <div class="verdict-main">
+          <div class="eyebrow" style="margin-bottom:8px;">The short version</div>
+          <h2>Bitly shortens links. UTM Fox governs campaigns.</h2>
+          <p>Bitly is a link shortener that added UTM building on top. That's fine for a one-off social post. It isn't a system that stops five marketers from spelling "facebook" five different ways, and every click still routes through bit.ly. UTM Fox is the tool a marketing ops lead installs once so the team can't casually break tracking.</p>
+        </div>
+        <div class="verdict-side">
+          <div class="verdict-stat"><span class="stat-label">Their UTM tier</span><span class="stat-value">$35<span class="stat-unit">/mo</span></span><span class="stat-sub">Growth · 500 links · UTMs</span></div>
+          <div class="verdict-stat"><span class="stat-label">Our entry price</span><span class="stat-value copper">$0<span class="stat-unit">free tier</span></span><span class="stat-sub">paid from $29/mo</span></div>
+        </div>
+      </div>
+
+      <div class="three-col">
+        <div class="col-card">
+          <h3 class="good">Where Bitly is strong</h3>
+          <ul>
+            <li>Enormous brand recognition — a bit.ly link needs no explanation</li>
+            <li>CSV bulk upload up to 100,000 links</li>
+            <li>Basic campaign grouping and city-level click analytics</li>
+            <li>QR codes and mobile deep linking on higher tiers</li>
+            <li>The path of least resistance for a single short link</li>
+          </ul>
+        </div>
+        <div class="col-card">
+          <h3 class="gap">Where it leaves you exposed</h3>
+          <ul>
+            <li>No naming convention enforcement — governance is an afterthought</li>
+            <li>No destination monitoring beyond click counts</li>
+            <li>No health score, no validation, no duplicate detection</li>
+            <li>Every click proxies through Bitly's infrastructure</li>
+            <li>UTM building gated behind the $35/mo Growth plan; 4-month data retention</li>
+          </ul>
+        </div>
+        <div class="col-card">
+          <h3 class="win">Why teams pick UTM Fox</h3>
+          <ul>
+            <li>Approved sources and mediums defined once, enforced on every link</li>
+            <li>Broken destinations flagged before launch and on every subsequent edit</li>
+            <li>Redirects deploy to your own domain via your Cloudflare account</li>
+            <li>Campaign history and audit trail, not a link list</li>
+            <li>GA4 reconciliation showing which campaigns actually delivered traffic</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="matrix-wrap">
+        <div class="table-scroll"><table class="matrix">
+          <thead><tr><th>Capability</th><th class="us">UTM Fox</th><th>Bitly</th></tr></thead>
+          <tbody>
+            <tr><td class="feat">Primary job</td><td class="us"><span class="yes">Campaign governance</span></td><td><span class="no">Link shortening</span><span class="cell-note">UTM builder is a bolt-on</span></td></tr>
+            <tr><td class="feat">Redirect model</td><td class="us"><span class="yes">Your own Cloudflare</span></td><td><span class="no">bit.ly proxies every click</span></td></tr>
+            <tr><td class="feat">Naming governance</td><td class="us"><span class="yes">Yes</span></td><td><span class="no">None</span></td></tr>
+            <tr><td class="feat">Duplicate campaign detection</td><td class="us"><span class="yes">Yes</span></td><td><span class="no">No</span></td></tr>
+            <tr><td class="feat">Destination health checks</td><td class="us"><span class="yes">Yes</span><span class="cell-note">Live HTTP probe recorded on every change</span></td><td><span class="no">Click analytics only</span></td></tr>
+            <tr><td class="feat">Campaign Health Score (0–100)</td><td class="us"><span class="yes">Yes</span></td><td><span class="no">No</span></td></tr>
+            <tr><td class="feat">Audit trail of who changed what</td><td class="us"><span class="yes">Yes</span></td><td><span class="partial">Role permissions on higher tiers</span></td></tr>
+            <tr><td class="feat">Data retention</td><td class="us"><span class="yes">Full history</span></td><td><span class="no">4 months on Growth</span></td></tr>
+            <tr><td class="feat">Entry price for UTM features</td><td class="us"><strong>Free → $29/mo</strong></td><td><strong>$35/mo</strong><span class="cell-note">$29/mo annual · Growth plan</span></td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="watchout">
+        <strong>Not either/or:</strong> plenty of teams keep Bitly for public-facing short links and use UTM Fox to govern what goes into them. The two aren't mutually exclusive — but only one of them tells you when a campaign destination goes down.
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="diff-banner">
+      <div>
+        <h2>The difference every one of them shares.</h2>
+        <p>Terminus, UTM.io, CampaignTrackly, Bitly, Rebrandly — all of them host the redirect themselves. Your campaign links resolve on their infrastructure, on their uptime, and if you leave, the links die with the account. UTM Fox connects to the Cloudflare account you already own and writes the rule there. Cancel us tomorrow and every link you published keeps working.</p>
+      </div>
+      <div class="diff-badge">your domain → stays yours</div>
+    </div>
+    <div class="three-col">
+      <div class="col-card plain">
+        <div class="mini-icon">1</div>
+        <h3>You connect Cloudflare by OAuth</h3>
+        <p>One authorization, scoped to the zones you pick. No API keys pasted into a form, no nameserver changes.</p>
+      </div>
+      <div class="col-card plain">
+        <div class="mini-icon">2</div>
+        <h3>We write the redirect rule</h3>
+        <p>The vanity path lives in your account as a normal Cloudflare rule you can read, edit, or delete without us.</p>
+      </div>
+      <div class="col-card plain">
+        <div class="mini-icon">3</div>
+        <h3>Traffic never touches us</h3>
+        <p>Visitors hit your domain and your edge. We monitor from the outside and score what we find.</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="section-head">
+      <div class="eyebrow">Before you switch</div>
+      <h2>The questions that come up every time</h2>
+    </div>
+    <div class="faq">
+      <div class="faq-item"><h3>Can I bring the links I already have?</h3><p>Existing links keep working — nothing you've published depends on us. Campaigns are recreated in UTM Fox so they're governed and scored going forward. A bulk CSV importer is not built yet; for large libraries, talk to us.</p></div>
+      <div class="faq-item"><h3>What happens to my links if I cancel?</h3><p>Redirects created in your own Cloudflare account stay in your Cloudflare account. Short links on our shared utm.wiki domain stop resolving — those are a convenience, not a dependency.</p></div>
+      <div class="faq-item"><h3>Do I need Cloudflare to use UTM Fox?</h3><p>No. Governance, validation, health scoring, and campaign history all work without connecting anything. Cloudflare is required only for deploying vanity redirects on your own domain.</p></div>
+      <div class="faq-item"><h3>How long does setup take?</h3><p>Governance rules and your first campaign: minutes. Connecting Cloudflare: one OAuth screen. There is no tag to install and no script on your site.</p></div>
+      <div class="faq-item"><h3>Is my traffic data shared with UTM Fox?</h3><p>Only what you connect. GA4 attribution monitoring reads the property you authorize. We never sit in the click path, so we have no independent record of your visitors.</p></div>
+      <div class="faq-item"><h3>What if my team is already on a spreadsheet?</h3><p>That's the most common starting point, and honestly the easiest migration — paste the sheet in, and every inconsistency you've accumulated shows up as a score.</p></div>
+    </div>
+  </section>
+  <section>
+    <div class="final-cta">
+      <h2>Try it against whatever you're using now.</h2>
+      <p>Free tier, no card, no call. Build one governed campaign and see what the score says.</p>
+      <div class="hero-ctas">
+      <a class="btn-primary" href="https://app.utmfox.com/signup">Start free</a>
+      <a class="btn-secondary" href="/#contact">Book a walkthrough</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="site">
+  <img class="footer-logo" src="/assets/logo.svg" alt="UTM Fox" />
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/product/">Product</a>
+    <a href="/pricing/">Pricing</a>
+    <a href="/compare/">Compare</a>
+    <a href="https://app.utmfox.com/login">Sign in</a>
+  </div>
+  <div class="footer-links">
+    <a href="/privacy-policy/">Privacy Policy</a>
+    <a href="/terms-and-conditions/">Terms &amp; Conditions</a>
+  </div>
+  <div>&copy; 2026 UTM Fox. All rights reserved.</div>
+</footer>
+<script>
+  var t = document.getElementById('navToggle');
+  if (t) t.addEventListener('click', function () {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+</script>
+<script>
+document.querySelectorAll('.tab').forEach(function (t) {
+  t.addEventListener('click', function () {
+    document.querySelectorAll('.tab').forEach(function (x) { x.classList.remove('active'); });
+    document.querySelectorAll('.tabpanel').forEach(function (p) { p.classList.remove('active'); });
+    t.classList.add('active');
+    document.getElementById('panel-' + t.dataset.tab).classList.add('active');
+    window.scrollTo({ top: t.closest('section').offsetTop - 20, behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>
