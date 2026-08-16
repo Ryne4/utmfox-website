@@ -65,7 +65,7 @@
       <div class="col-card plain">
         <div class="mini-icon">◆</div>
         <h3>Your own landing page</h3>
-        <p>A branded page at utmfox.com/a/yourname with your logo, your quote and your video. You control it; we host it.</p>
+        <p>A branded page at app.utmfox.com/a/yourname with your logo, your quote and your video. You control it; we host it.</p>
       </div>
     </div>
   </section>
@@ -134,7 +134,7 @@
       <div class="apply-field">
         <label for="af-slug">Your landing page</label>
         <div class="slug-row">
-          <span class="slug-prefix">utmfox.com/a/</span>
+          <span class="slug-prefix">app.utmfox.com/a/</span>
           <input type="text" id="af-slug" name="requestedSlug" required placeholder="yourname" spellcheck="false" autocomplete="off" />
         </div>
         <div class="slug-hint" id="af-slug-hint"></div>
@@ -239,7 +239,7 @@
     if (s.length < 3) { hintEl.className = 'slug-hint bad'; hintEl.textContent = 'Use at least 3 letters or numbers.'; return; }
     if (s.length > 32) { hintEl.className = 'slug-hint bad'; hintEl.textContent = 'Keep it under 32 characters.'; return; }
     if (RESERVED.indexOf(s) !== -1) { hintEl.className = 'slug-hint bad'; hintEl.textContent = 'That name is reserved — try another.'; return; }
-    hintEl.innerHTML = 'Your page: <b>utmfox.com/a/' + s + '</b>';
+    hintEl.innerHTML = 'Your page: <b>app.utmfox.com/a/' + s + '</b>';
   });
 
   function reset() { submitEl.disabled = false; submitEl.textContent = 'Submit application'; }
