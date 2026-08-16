@@ -160,19 +160,19 @@
     </div>
     <div class="tool-grid">
       <div class="tool">
-        <div class="tool-top"><h3>Cloudflare connection</h3><span class="pill starter">Starter and up</span></div>
+        <div class="tool-top"><h3>Cloudflare connection</h3><span class="pill starter"><span data-uf-plan="starter">Starter</span> and up</span></div>
         <p>Authorize UTM Fox against your own Cloudflare account through OAuth — no API tokens pasted into a form, no nameserver changes, scoped to the zones you choose.</p>
         <div class="tool-meta">In-app: Account settings → Connect Cloudflare</div>
       </div>
       <div class="tool">
-        <div class="tool-top"><h3>Smart redirects</h3><span class="pill starter">Starter and up</span></div>
+        <div class="tool-top"><h3>Smart redirects</h3><span class="pill starter"><span data-uf-plan="starter">Starter</span> and up</span></div>
         <p>Create a vanity path on your own domain — <code>yoursite.com/radio</code> → the fully tagged campaign URL. The rule is written into your Cloudflare account as a normal redirect you can read, edit, or delete without us. Cancel UTM Fox and it keeps working.</p>
         <div class="tool-meta">In-app: Redirects</div>
       </div>
       <div class="tool">
         <div class="tool-top"><h3>Instant utm.wiki short links</h3><span class="pill all">All plans</span></div>
         <p>Need a link right now, before anyone has connected a domain? Every organization gets short links on our shared <code>utm.wiki</code> domain with visit counting, so day one isn't blocked on a DNS conversation with IT.</p>
-        <div class="tool-meta">In-app: Redirects · 3 links on Free, unlimited on Agency</div>
+        <div class="tool-meta">In-app: Redirects · <span data-uf-limit="free:utm_wiki_max_links">3</span> links on <span data-uf-plan="free">Free</span>, unlimited on <span data-uf-plan="agency">Agency</span></div>
       </div>
     </div>
   </section>
@@ -191,12 +191,12 @@
         <div class="tool-meta">In-app: Dashboard</div>
       </div>
       <div class="tool">
-        <div class="tool-top"><h3>GA4 integration</h3><span class="pill growth">Growth and up</span></div>
+        <div class="tool-top"><h3>GA4 integration</h3><span class="pill growth"><span data-uf-plan="growth">Growth</span> and up</span></div>
         <p>Connect a GA4 property by OAuth and pick the property to read. UTM Fox pulls campaign traffic — sessions, users, engaged sessions, new users, conversions — and reconciles it against the campaigns you actually issued.</p>
         <div class="tool-meta">In-app: Account settings → Connect GA4</div>
       </div>
       <div class="tool feature">
-        <div class="tool-top"><h3>Attribution monitoring</h3><span class="pill growth">Growth and up</span></div>
+        <div class="tool-top"><h3>Attribution monitoring</h3><span class="pill growth"><span data-uf-plan="growth">Growth</span> and up</span></div>
         <p>The report that tells you what's wrong, in three buckets:</p>
         <ul class="tool-list">
           <li><strong>Matched</strong> — issued campaigns with GA4 traffic, reporting cleanly.</li>
@@ -206,7 +206,7 @@
         <div class="tool-meta">In-app: Attribution</div>
       </div>
       <div class="tool">
-        <div class="tool-top"><h3>Conversion ledger</h3><span class="pill growth">Growth and up</span></div>
+        <div class="tool-top"><h3>Conversion ledger</h3><span class="pill growth"><span data-uf-plan="growth">Growth</span> and up</span></div>
         <p>Conversions arrive from many places — your server API, payment and ecommerce webhooks, CRM, native forms, browser events, GA4 imports, ad platforms — and they double-count. UTM Fox ranks every claim by source authority and deduplicates, so one sale is one sale.</p>
         <div class="tool-meta">In-app: Conversions</div>
       </div>
@@ -270,5 +270,6 @@
   });
 </script>
 
+<script src="/assets/uf-live-pricing.js" defer></script>
 </body>
 </html>
