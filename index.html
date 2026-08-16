@@ -51,67 +51,85 @@ h1.headline { font-size: 46px; font-weight: 800; line-height: 1.12; margin: 0 0 
 p.subheadline { font-size: 18px; color: var(--text-muted); max-width: 620px; margin: 0 auto 32px; line-height: 1.5; }
 .hero-badge-row { display: flex; justify-content: center; margin-bottom: 56px; }
 
-/* Free UTM builder (hero widget) */
-.hero-visual { background: var(--surface-muted); border: 1px solid var(--border); border-radius: 14px; max-width: 560px; margin: 0 auto; padding: 26px 28px; text-align: left; }
-.builder-head { margin-bottom: 18px; }
-.builder-eyebrow { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--copper); margin-bottom: 5px; }
-.builder-sub { display: block; font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+/* Free UTM builder (hero) — dark panel, matches the "control plane" banner treatment.
+   color-scheme: dark so native select popups and the caret render light-on-dark too. */
+.hero-visual {
+  background: var(--ink); border-radius: 16px; max-width: 100%; margin: 0 auto;
+  padding: 34px 38px 30px; text-align: left; color: #fff; color-scheme: dark;
+}
+.builder-head { margin-bottom: 22px; }
+.builder-eyebrow { display: block; font-size: 24px; font-weight: 700; letter-spacing: -0.01em; color: #fff; margin-bottom: 7px; }
+.builder-sub { display: block; font-size: 14.5px; color: #cbd5e1; line-height: 1.5; }
 
-.builder-label { display: block; font-size: 12.5px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+/* Single row on desktop: address, source, medium, campaign, button.
+   align-items:end keeps the button's baseline level with the inputs, not the labels. */
+.builder-grid { display: grid; grid-template-columns: 2.2fr 1.15fr 1.15fr 1.6fr auto; gap: 14px; align-items: end; }
+.builder-field { min-width: 0; }
+
+.builder-label { display: block; font-size: 12.5px; font-weight: 600; color: #cbd5e1; margin-bottom: 7px; }
 .builder-input {
-  width: 100%; padding: 11px 13px; border: 1px solid var(--border); border-radius: 8px;
-  font-size: 14px; font-family: inherit; background: #fff; color: var(--ink); margin-bottom: 14px;
+  width: 100%; padding: 11px 13px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px;
+  font-size: 14px; font-family: inherit; background: rgba(255,255,255,0.07); color: #fff;
   -webkit-appearance: none; appearance: none;
 }
+.builder-input::placeholder { color: #8595ab; }
 select.builder-input {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23cbd5e1' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
   background-repeat: no-repeat; background-position: right 11px center; background-size: 15px;
   padding-right: 34px; cursor: pointer;
 }
 .builder-input:focus { outline: 2px solid var(--copper); outline-offset: 1px; border-color: var(--copper); }
-.builder-input.is-invalid { border-color: #dc2626; }
-.builder-custom { margin-top: -6px; }
-
-.builder-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.builder-field { min-width: 0; }
-
-.builder-error { font-size: 12.5px; color: #dc2626; margin: -8px 0 12px; min-height: 0; }
-.builder-error:empty { display: none; }
-.builder-hint { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); margin: -8px 0 14px; line-height: 1.5; }
-.builder-hint:empty { display: none; }
-.builder-hint b { color: var(--ink); font-weight: 500; }
+.builder-input.is-invalid { border-color: #f87171; }
+.builder-custom { margin-top: 8px; }
 
 .builder-submit {
-  width: 100%; background: var(--copper); color: #fff; border: 1px solid var(--copper);
-  border-radius: 8px; padding: 12px 20px; font-weight: 600; font-size: 14.5px;
-  font-family: inherit; cursor: pointer; margin-top: 2px;
+  background: var(--copper); color: #fff; border: 1px solid var(--copper); border-radius: 8px;
+  padding: 11px 22px; font-weight: 600; font-size: 14.5px; font-family: inherit;
+  cursor: pointer; white-space: nowrap;
 }
 .builder-submit:hover { background: var(--copper-hover); border-color: var(--copper-hover); }
-.builder-submit:disabled { opacity: 0.6; cursor: default; }
 
-.builder-result { margin-top: 18px; border-top: 1px solid var(--border); padding-top: 18px; }
-.builder-result-label { font-size: 11.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
+.builder-messages { margin-top: 10px; }
+.builder-error { font-size: 12.5px; color: #fca5a5; }
+.builder-error:empty { display: none; }
+.builder-hint { font-family: var(--font-mono); font-size: 12px; color: #94a3b8; line-height: 1.5; }
+.builder-hint:empty { display: none; }
+.builder-hint b { color: var(--oxide); font-weight: 500; }
+
+.builder-result { margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.14); padding-top: 18px; }
+.builder-result-label { font-size: 11.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #94a3b8; margin-bottom: 9px; }
 .builder-result-row { display: flex; align-items: stretch; gap: 10px; }
 .builder-url {
-  flex: 1; min-width: 0; background: #fff; border: 1px solid var(--border); border-radius: 8px;
-  padding: 12px 14px; font-family: var(--font-mono); font-size: 12.5px; color: var(--ink);
-  line-height: 1.5; word-break: break-all;
+  flex: 1; min-width: 0; background: rgba(124,181,173,0.12); border: 1px solid var(--oxide);
+  border-radius: 8px; padding: 12px 14px; font-family: var(--font-mono); font-size: 12.5px;
+  color: #e2f1ef; line-height: 1.5; word-break: break-all;
 }
 .builder-copy {
-  flex-shrink: 0; align-self: flex-start; background: #fff; border: 1px solid var(--border);
-  color: var(--ink); border-radius: 8px; padding: 12px 16px; font-weight: 600; font-size: 13px;
-  font-family: inherit; cursor: pointer;
+  flex-shrink: 0; align-self: flex-start; background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.22); color: #fff; border-radius: 8px; padding: 12px 18px;
+  font-weight: 600; font-size: 13px; font-family: inherit; cursor: pointer;
 }
-.builder-copy:hover { border-color: var(--copper); color: var(--copper-hover); }
-.builder-copy.copied { border-color: var(--healthy); color: var(--healthy); }
-.builder-result-foot { font-size: 13px; color: var(--text-muted); margin-top: 12px; line-height: 1.5; }
-.builder-result-foot a { color: var(--copper-hover); font-weight: 600; }
+.builder-copy:hover { border-color: var(--oxide); color: var(--oxide); }
+.builder-copy.copied { border-color: var(--oxide); color: var(--oxide); }
+.builder-result-foot { font-size: 13px; color: #cbd5e1; margin-top: 12px; line-height: 1.5; }
+.builder-result-foot a { color: var(--oxide); font-weight: 600; }
 
-.builder-privacy { font-size: 11.5px; color: var(--text-muted); line-height: 1.55; margin: 16px 0 0; }
-.builder-privacy a { color: var(--text-muted); text-decoration: underline; }
+.builder-privacy { font-size: 11.5px; color: #8595ab; line-height: 1.55; margin: 18px 0 0; }
+.builder-privacy a { color: #8595ab; text-decoration: underline; }
 
-@media (max-width: 640px) {
-  .builder-row { grid-template-columns: 1fr; gap: 0; }
+@media (max-width: 1000px) {
+  /* Two rows before fully stacking: address spans, then the three short fields. */
+  .builder-grid { grid-template-columns: 1fr 1fr 1fr; }
+  .builder-field.f-url { grid-column: 1 / -1; }
+  .builder-field.f-campaign { grid-column: 1 / 3; }
+  .builder-submit { grid-column: 3; }
+}
+@media (max-width: 680px) {
+  .hero-visual { padding: 26px 22px 24px; }
+  .builder-eyebrow { font-size: 20px; }
+  .builder-grid { grid-template-columns: 1fr; gap: 12px; }
+  .builder-field.f-url, .builder-field.f-campaign, .builder-submit { grid-column: auto; }
+  .builder-submit { width: 100%; margin-top: 4px; padding: 13px 22px; }
   .builder-result-row { flex-direction: column; }
   .builder-copy { align-self: stretch; }
 }
@@ -183,6 +201,8 @@ header.nav { position: sticky; top: 0; background: rgba(255,255,255,0.94); backd
   h1.headline { font-size: 32px; }
 }
 
+.hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
 footer { text-align: center; padding: 32px; font-size: 12px; color: var(--text-muted); }
 footer img.footer-logo { height: 18px; opacity: 0.6; margin-bottom: 10px; display: block; margin-left: auto; margin-right: auto; }
 footer .footer-links { margin-bottom: 10px; }
@@ -221,17 +241,18 @@ footer .footer-links a:hover { color: var(--copper-hover); text-decoration: unde
     </div>
     <div class="hero-visual">
       <div class="builder-head">
-        <span class="builder-eyebrow">Free UTM builder</span>
+        <span class="builder-eyebrow">Free UTM Link Builder</span>
         <span class="builder-sub">No account needed. Built to the same rules UTM Fox enforces.</span>
       </div>
 
       <form id="utm-builder" novalidate>
-        <label class="builder-label" for="ub-url">Your website address</label>
-        <input class="builder-input" id="ub-url" name="url" type="text" inputmode="url"
-               placeholder="example.com/fall-sale" autocomplete="off" spellcheck="false" />
-        <div class="builder-error" id="ub-url-error"></div>
+        <div class="builder-grid">
+          <div class="builder-field f-url">
+            <label class="builder-label" for="ub-url">Your website address</label>
+            <input class="builder-input" id="ub-url" name="url" type="text" inputmode="url"
+                   placeholder="example.com/fall-sale" autocomplete="off" spellcheck="false" />
+          </div>
 
-        <div class="builder-row">
           <div class="builder-field">
             <label class="builder-label" for="ub-source">Source</label>
             <select class="builder-input" id="ub-source" name="source">
@@ -273,14 +294,20 @@ footer .footer-links a:hover { color: var(--copper-hover); text-decoration: unde
             <input class="builder-input builder-custom" id="ub-medium-custom" type="text"
                    placeholder="your medium" autocomplete="off" spellcheck="false" hidden />
           </div>
+
+          <div class="builder-field f-campaign">
+            <label class="builder-label" for="ub-campaign">Campaign name</label>
+            <input class="builder-input" id="ub-campaign" name="campaign" type="text"
+                   placeholder="Fall Sale 2026" autocomplete="off" spellcheck="false" />
+          </div>
+
+          <button class="builder-submit" type="submit" id="ub-submit">Generate</button>
         </div>
 
-        <label class="builder-label" for="ub-campaign">Campaign name</label>
-        <input class="builder-input" id="ub-campaign" name="campaign" type="text"
-               placeholder="Fall Sale 2026" autocomplete="off" spellcheck="false" />
-        <div class="builder-hint" id="ub-campaign-hint"></div>
-
-        <button class="builder-submit" type="submit" id="ub-submit">Generate my UTM link</button>
+        <div class="builder-messages">
+          <div class="builder-error" id="ub-url-error"></div>
+          <div class="builder-hint" id="ub-campaign-hint"></div>
+        </div>
       </form>
 
       <div class="builder-result" id="ub-result" hidden>
@@ -353,18 +380,7 @@ footer .footer-links a:hover { color: var(--copper-hover); text-decoration: unde
       <h2 style="font-size:28px; font-weight:700; margin:8px 0 12px; letter-spacing:-0.01em;">We're building UTM Fox.</h2>
       <p style="font-size:15px; color:var(--text-muted); margin:0;">Leave a message and we'll reach out when we launch — or sooner, if you have questions.</p>
 
-      <!--
-        Form backend: this posts to Formspree (https://formspree.io), a free
-        service for collecting form submissions from static sites like GitHub
-        Pages (no server required).
-
-        SETUP NEEDED BEFORE THIS GOES LIVE:
-        1. Create a free account at https://formspree.io
-        2. Create a new form and copy its endpoint ID
-        3. Replace YOUR_FORM_ID below with that ID
-        Submissions will then arrive by email and in the Formspree dashboard.
-      -->
-      <form class="contact-form" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <form class="contact-form" id="contact-form" method="POST">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" required />
 
@@ -373,6 +389,12 @@ footer .footer-links a:hover { color: var(--copper-hover); text-decoration: unde
 
         <label for="message">Message</label>
         <textarea id="message" name="message" required placeholder="What are you hoping UTM Fox will solve for your team?"></textarea>
+
+        <!-- Honeypot: hidden from people, irresistible to bots. Non-empty means bot. -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" tabindex="-1" autocomplete="off" />
+        </div>
 
         <button type="submit" class="btn-primary" id="contact-submit">Send message</button>
         <div class="form-status" id="form-status"></div>
@@ -394,37 +416,52 @@ footer .footer-links a:hover { color: var(--copper-hover); text-decoration: unde
   if (navT) navT.addEventListener('click', function () { document.getElementById('navLinks').classList.toggle('open'); });
 
   var form = document.getElementById('contact-form');
-  var status = document.getElementById('form-status');
+  var statusEl = document.getElementById('form-status');
   var submitBtn = document.getElementById('contact-submit');
+  var CONTACT_ENDPOINT = 'https://app.utmfox.com/api/v1/public/contact';
+
+  function resetButton() {
+    submitBtn.textContent = 'Send message';
+    submitBtn.disabled = false;
+  }
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending...';
-    status.textContent = '';
-    status.className = 'form-status';
+    statusEl.textContent = '';
+    statusEl.className = 'form-status';
 
-    fetch(form.action, {
+    fetch(CONTACT_ENDPOINT, {
       method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value,
+        company: document.getElementById('company').value
+      })
     }).then(function (response) {
       if (response.ok) {
         form.reset();
-        status.textContent = "Thanks — we'll be in touch.";
-        status.className = 'form-status success';
-        submitBtn.textContent = 'Send message';
-        submitBtn.disabled = false;
-      } else {
-        return response.json().then(function (data) {
-          throw new Error((data && data.error) || 'Submission failed');
-        });
+        statusEl.textContent = "Thanks — we'll be in touch.";
+        statusEl.className = 'form-status success';
+        resetButton();
+        return;
       }
-    }).catch(function () {
-      status.textContent = "Something went wrong — please try again, or email us directly.";
-      status.className = 'form-status error';
-      submitBtn.textContent = 'Send message';
-      submitBtn.disabled = false;
+      // Surface the server's own wording for validation problems; it is more specific
+      // than anything we could guess from a status code alone.
+      return response.json().catch(function () { return {}; }).then(function (data) {
+        var e = new Error((data && data.error) || 'Something went wrong — please try again.');
+        e.fromServer = true; // only server wording is safe to show; "Failed to fetch" is not
+        throw e;
+      });
+    }).catch(function (err) {
+      statusEl.textContent = (err && err.fromServer && err.message)
+        ? err.message
+        : "Couldn't reach us just now — please try again in a moment.";
+      statusEl.className = 'form-status error';
+      resetButton();
     });
   });
 </script>
