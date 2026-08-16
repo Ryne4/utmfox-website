@@ -1,0 +1,50 @@
+name: Sync pricing from the app
+
+# Keeps the static pricing page in step with whatever the staff dashboard says at
+# /staff/billing/plans. Visitors already see live values via assets/uf-live-pricing.js —
+# this exists so the committed HTML (what crawlers, link previews and no-JS visitors read)
+# doesn't drift, and so the change is visible in git history.
+on:
+  schedule:
+    # Every 15 minutes. Cheap, and it bounds how long the static copy can be stale.
+    - cron: "*/15 * * * *"
+  workflow_dispatch: # "Run workflow" in the Actions tab, for an immediate refresh
+  push:
+    # Re-run when the generator or its copy tables change, so edits to either are
+    # reflected without waiting for the schedule.
+    paths:
+      - "tools/sync-pricing.mjs"
+      - ".github/workflows/sync-pricing.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  # Never let two runs race to commit the same file.
+  group: sync-pricing
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Rewrite pricing regions from the live plan data
+        run: node tools/sync-pricing.mjs
+
+      - name: Commit if anything moved
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Already in sync — nothing to commit."
+            exit 0
+          fi
+          git config user.name "utmfox-pricing-sync"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git commit -m "Sync pricing from staff dashboard"
+          git push
