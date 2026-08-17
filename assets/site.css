@@ -232,6 +232,47 @@ footer.site .footer-links a:hover { color: var(--copper-hover); text-decoration:
 .gap-item strong { display: block; font-size: 14px; margin-bottom: 5px; }
 .gap-item span { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
 
+/* ================= AFFILIATES PAGE ================= */
+.apply-form { max-width: 620px; margin: 0 auto; }
+.apply-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+.apply-field { margin-bottom: 20px; }
+.apply-row .apply-field { margin-bottom: 0; }
+.apply-field label { display: block; font-size: 13.5px; font-weight: 600; margin-bottom: 7px; }
+.apply-field .opt { font-weight: 400; color: var(--text-muted); font-size: 12px; }
+.apply-field .req { color: var(--critical); }
+.apply-field input[type="text"],
+.apply-field input[type="email"],
+.apply-field select,
+.apply-field textarea {
+  width: 100%; border: 1px solid var(--border); border-radius: 8px; padding: 11px 13px;
+  font-family: inherit; font-size: 14px; color: var(--ink); background: #fff;
+}
+.apply-field input:focus, .apply-field select:focus, .apply-field textarea:focus {
+  outline: none; border-color: var(--copper);
+}
+.apply-field textarea { min-height: 88px; resize: vertical; line-height: 1.5; }
+.slug-row { display: flex; align-items: stretch; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.slug-row .slug-prefix {
+  display: flex; align-items: center; padding: 0 12px; background: var(--surface-muted);
+  font-family: var(--font-mono); font-size: 13px; color: var(--text-muted);
+  white-space: nowrap; border-right: 1px solid var(--border);
+}
+.slug-row input { border: none; border-radius: 0; }
+.slug-row input:focus { outline: none; }
+.slug-hint { font-size: 12.5px; margin-top: 6px; color: var(--text-muted); min-height: 16px; }
+.slug-hint.bad { color: var(--critical); }
+/* Honeypot — invisible to people, present in the DOM for bots that fill every field.
+   Previously only had aria-hidden, which has no visual effect; a sighted applicant could
+   see and fill this, silently discarding their real submission. */
+.hp-field { position: absolute; left: -9999px; top: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.apply-submit { width: 100%; padding: 13px; font-size: 15px; margin-top: 4px; border: none; }
+.form-status { font-size: 13.5px; margin-top: 12px; text-align: center; min-height: 18px; }
+.form-status.success { color: var(--healthy); }
+.form-status.error { color: var(--critical); }
+.apply-legal { font-size: 12px; color: var(--text-muted); line-height: 1.6; margin-top: 20px; text-align: center; }
+.apply-legal a { color: var(--copper); text-decoration: none; }
+.apply-legal a:hover { text-decoration: underline; }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 1000px) {
   .plan-grid, .anchor-row { grid-template-columns: repeat(2, 1fr); }
@@ -253,4 +294,5 @@ footer.site .footer-links a:hover { color: var(--copper-hover); text-decoration:
   .nav-cta a.signin { display: none; }
   .plan-grid, .anchor-row { grid-template-columns: 1fr; }
   .matrix-wrap { padding: 8px 14px; }
+  .apply-row { grid-template-columns: 1fr; }
 }

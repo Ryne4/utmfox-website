@@ -90,11 +90,11 @@
     <form class="apply-form" id="affiliate-form" method="POST">
       <div class="apply-row">
         <div class="apply-field">
-          <label for="af-name">Your name</label>
+          <label for="af-name">Your name <span class="req">*</span></label>
           <input type="text" id="af-name" name="name" required autocomplete="name" />
         </div>
         <div class="apply-field">
-          <label for="af-email">Email</label>
+          <label for="af-email">Email <span class="req">*</span></label>
           <input type="email" id="af-email" name="email" required autocomplete="email" />
         </div>
       </div>
@@ -117,7 +117,7 @@
 
       <div class="apply-row">
         <div class="apply-field">
-          <label for="af-audience">Where would you promote it?</label>
+          <label for="af-audience">Where would you promote it? <span class="req">*</span></label>
           <select id="af-audience" name="audience" required>
             <option value="">Choose…</option>
             <option>Agency clients</option>
@@ -137,17 +137,17 @@
       </div>
 
       <div class="apply-field">
-        <label for="af-about">Who are you?</label>
+        <label for="af-about">Who are you? <span class="req">*</span></label>
         <textarea id="af-about" name="about" required placeholder="Tell us a bit about yourself and what you do."></textarea>
       </div>
 
       <div class="apply-field">
-        <label for="af-why">Why UTM Fox?</label>
+        <label for="af-why">Why UTM Fox? <span class="req">*</span></label>
         <textarea id="af-why" name="whyUtmFox" required placeholder="What made you want to promote this specifically?"></textarea>
       </div>
 
       <div class="apply-field">
-        <label for="af-slug">Your landing page</label>
+        <label for="af-slug">Your landing page <span class="req">*</span></label>
         <div class="slug-row">
           <span class="slug-prefix">app.utmfox.com/a/</span>
           <input type="text" id="af-slug" name="requestedSlug" required placeholder="yourname" spellcheck="false" autocomplete="off" />
@@ -156,7 +156,7 @@
       </div>
 
       <div class="apply-field">
-        <label for="af-pitch">How would you position UTM Fox to them?</label>
+        <label for="af-pitch">How would you position UTM Fox to them? <span class="req">*</span></label>
         <textarea id="af-pitch" name="pitch" required placeholder="A couple of sentences. What problem do they have that this solves?"></textarea>
       </div>
 
