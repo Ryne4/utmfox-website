@@ -105,9 +105,14 @@
           <input type="text" id="af-company" name="company" autocomplete="organization" />
         </div>
         <div class="apply-field">
-          <label for="af-website">Website or channel <span class="opt">optional</span></label>
+          <label for="af-website">Website <span class="opt">optional</span></label>
           <input type="text" id="af-website" name="websiteUrl" placeholder="example.com" />
         </div>
+      </div>
+
+      <div class="apply-field">
+        <label for="af-social">Social channels <span class="opt">optional</span></label>
+        <input type="text" id="af-social" name="socialLinks" placeholder="Twitter/X, LinkedIn, YouTube — links or handles" />
       </div>
 
       <div class="apply-row">
@@ -129,6 +134,16 @@
           <label for="af-size">Roughly how many people? <span class="opt">optional</span></label>
           <input type="text" id="af-size" name="audienceSize" placeholder="e.g. 4,000 subscribers" />
         </div>
+      </div>
+
+      <div class="apply-field">
+        <label for="af-about">Who are you?</label>
+        <textarea id="af-about" name="about" required placeholder="Tell us a bit about yourself and what you do."></textarea>
+      </div>
+
+      <div class="apply-field">
+        <label for="af-why">Why UTM Fox?</label>
+        <textarea id="af-why" name="whyUtmFox" required placeholder="What made you want to promote this specifically?"></textarea>
       </div>
 
       <div class="apply-field">
@@ -256,8 +271,11 @@
       email: document.getElementById('af-email').value,
       company: document.getElementById('af-company').value,
       websiteUrl: document.getElementById('af-website').value,
+      socialLinks: document.getElementById('af-social').value,
       audience: document.getElementById('af-audience').value,
       audienceSize: document.getElementById('af-size').value,
+      about: document.getElementById('af-about').value,
+      whyUtmFox: document.getElementById('af-why').value,
       requestedSlug: slugEl.value,
       pitch: document.getElementById('af-pitch').value,
       company_website: document.getElementById('af-company-website').value
