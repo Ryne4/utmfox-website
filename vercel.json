@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/a/:slug", "destination": "https://app.utmfox.com/a/:slug" }
+  ]
+}
